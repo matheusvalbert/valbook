@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="VB_Cadastro1.css">
+</head>
+
+<body class="bg-secondary">
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar18">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar18"> <a class="navbar-brand d-none d-md-block" href="/VB_Inicio.html">
+          <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+          <b><b> ValBook</b></b>
+        </a>
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"> <a class="nav-link" href="/VB_Features.html">Features</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="/VB_Reactions.html">Reactions</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="/VB_Team.html">Team</a> </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item"> <a class="nav-link text-white" href="/VB_Login.html">Log in</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="text-center py-3">
+    <div class="container">
+      <div class="row">
+        <div class="bg-white mx-auto col-md-8 col-10 py-3 px-4">
+          <div class="mx-auto col-lg-12 col-10" style="">
+            <h1 style="">Complete the fields below</h1>
+            <p class="mb-3">Few steps to loose everything ! ( Including your soul )<br></p>
+            <form class="text-left">
+              <div class="form-group"> <label for="form16">Your Name</label> <input type="text" class="form-control" id="form16" placeholder="Tobias Junior Werwibi"> <small class="text-muted form-text">Whatever, we do not know if that is your real name. Welcome to internet.</small></div>
+              <div class="form-group"> <label for="form17">Your Country</label> <input type="text" class="form-control" id="form17" placeholder="Narnia"> <small class="text-muted form-text">North Korea not allowed. Just kidding. ( Seriously, do you have any internet there ? )</small></div>
+              <div class="form-group"> <label for="form18">Your Birthday</label> <input type="date" class="form-control" id="form18"> <small class="text-muted form-text">Please, be at least 18+. ( I cannot go to jail again )</small></div>
+              <div class="form-group"> <label for="form19">Your email</label> <input type="email" class="form-control" id="form19" placeholder="tobias@bol.com.br"> <small class="text-muted form-text">We'll share your email with everyone. How do you think we keep this site running ? </small></div>
+              <div class="form-row">
+                <div class="form-group col-md-6"> <label for="form20">Password</label> <input type="password" class="form-control" id="form20" placeholder="••••"> <small class="text-muted form-text">Minimum 8 characters.</small></div>
+                <div class="form-group col-md-6"> <label for="form21">Confirm Password</label> <input type="password" class="form-control" id="form21" placeholder="••••"> <small class="text-muted form-text">It's a good idea to use a credit card password.</small></div>
+              </div>
+              <div class="form-group">
+                <div class="form-check"> <input class="form-check-input" type="checkbox" id="form22" value="off"> <label class="form-check-label" for="form22"> I Agree with <a href="/VB_Term.html">Term and Conditions</a> of the service </label> </div>
+                <small class="text-muted form-text">(I know you won't read this )</small>
+              </div> <button type="button" class="btn btn-primary" id="sendinfo">Sign in</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#form22").click(function(){
+		if($("#form22").val() == "on")
+			$("#form22").val("off");
+		else
+			$("#form22").val("on");
+	});
+	$("#sendinfo").click(function(){
+		var nome = $("#form16").val();
+		var pais = $("#form17").val();
+		var nascimento = $("#form18").val();
+		var email = $("#form19").val();
+		var senha1 = $("#form20").val();
+		var senha2 = $("#form21").val();
+		var check = $("#form22").val();
+		$.post("/CadastrarUsuario", {nome: nome,pais: pais, nascimento: nascimento, email:email, senha1: senha1, senha2:senha2, check:check}, function(data, status){
+			alert(data);
+			if(data == ("Usuario criado com sucesso"))
+				$(location).attr('href', '/VB_Inicio.html');
+		});
+	});
+	});
+</script>
+</html>
