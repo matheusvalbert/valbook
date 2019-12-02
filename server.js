@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 let MongoClient = require('mongodb').MongoClient;
-let url = mongo "mongodb://localhost:27017/mydb";
+let url = "mongodb://localhost:27017/mydb";
 var session = require('express-session');
 let MONGO_CONFIG = {useUnifiedTopology: true, useNewUrlParser: true};
 var sessoes = [];
@@ -656,4 +656,4 @@ return new Promise((resolve) => {
 });
 	}
 
-app.listen(process.env.PORT || 8080);
+app.listen(8080);
