@@ -1,5 +1,3 @@
-# valbook
-
 # Introdução
 ```
 Este projeto foi desenvolvido no sexto semestre na disciplina de Tópicos de programação.
