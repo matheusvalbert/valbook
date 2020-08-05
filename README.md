@@ -9,7 +9,7 @@ O objetivo do projeto é aprender as diferentes tecnologias para a criação de 
 # Começando a utilizá-lo
 ```
 Este projeto deve ser utilizado em um sistema operacional Linux.
-Para a execução do projeto é necessário baixar o nodejs, mongodb entre outras dependências.
+Para a execução do projeto é necessário baixar o nodeJS, mongodb entre outras dependências.
 Para executar é necessário abrir o servidor para o site e acessar o localhost utilizando a porta: 8080 em um navegador.
 ```
  
