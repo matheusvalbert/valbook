@@ -2,7 +2,7 @@
 ```
 Este projeto foi desenvolvido no sexto semestre na disciplina de Tópicos de programação.
 Este projeto foi realizado a criação de um site utilizando JavaScript e HTML.
-No back-end foi utilizado nodejs e o banco de dados utilizado foi o mongodb.
+No back-end foi utilizado nodeJS e o banco de dados utilizado foi o mongodb.
 Nada está escrito no site deve ser levado a sério, isto é apenas uma brincadeira.
 O objetivo do projeto é aprender as diferentes tecnologias para a criação de um site.
 ```
